@@ -21,6 +21,7 @@ jobs:
           architecture: x64
       - name: Installing reqs
         run: pip install -r requirements.txt
-      - uses: jpetrucciani/mypy-check@0.730
-        with:
-          path: app
+      - name: MyPy check
+        run: |
+          pip install mypy
+          mypy .
