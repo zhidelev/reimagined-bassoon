@@ -9,7 +9,7 @@ jobs:
 
     steps:
     - uses: actions/checkout@v1
-    - name: Python Lint (isort/black)
-      run:  wrboyce/python-lint-action@v1.0.0
+    - name: Black Code Formatter
+      run:  lgeiger/black-action@v1.0.1
     - name: Mypy Check
       run: jpetrucciani/mypy-check@0.730
