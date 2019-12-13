@@ -10,6 +10,6 @@ jobs:
     steps:
     - uses: actions/checkout@v1
     - name: Black Code Formatter
-      run:  lgeiger/black-action@v1.0.1
+      uses: lgeiger/black-action@v1.0.1
     - name: Mypy Check
-      run: jpetrucciani/mypy-check@0.730
+      uses: jpetrucciani/mypy-check@0.730
