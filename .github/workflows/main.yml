@@ -10,7 +10,7 @@ jobs:
     steps:
       - uses: actions/checkout@v1
       - name: Setup Python environment
-      - uses: actions/setup-python@v1.1.1
+        uses: actions/setup-python@v1.1.1
         with:
           # Version range or exact version of a Python version to use, using semvers version range syntax.
           python-version: 3.7
