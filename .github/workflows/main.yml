@@ -1,0 +1,15 @@
+name: CI
+
+on: [push]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v1
+    - name: Python Lint (isort/black)
+      run:  wrboyce/python-lint-action@v1.0.0
+    - name: Mypy Check
+      run: jpetrucciani/mypy-check@0.730
