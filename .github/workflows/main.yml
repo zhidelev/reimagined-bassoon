@@ -5,8 +5,16 @@ on: [push]
 jobs:
   build:
 
-    runs-on: ubuntu-latest
+    runs-on: [ubuntu-latest, macos]
 
     steps:
       - uses: actions/checkout@v1
+      - name: Setup Python environment
+      - uses: actions/setup-python@v1.1.1
+        with:
+          # Version range or exact version of a Python version to use, using semvers version range syntax.
+          python-version: 3.7
+          # The target architecture (x86, x64) of the Python interpreter.
+          architecture: x64
+          run: pip install -r requirements.txt
       - uses: jpetrucciani/mypy-check@0.730
