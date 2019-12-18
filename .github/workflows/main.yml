@@ -2,7 +2,19 @@ name: CI
 
 on: [push]
 
+
+
 jobs:
+  sonarCloudTrigger:
+    name: SonarCloud Trigger
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@master
+    - name: SonarCloud Scan
+      uses: sonarsource/sonarcloud-github-action@master
+      env:
+        SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+  
   build:
 
     runs-on: ${{ matrix.os }}
@@ -21,5 +33,3 @@ jobs:
           architecture: x64
       - name: Installing reqs
         run: pip install -r requirements.txt
-      - name: SonarCloud Scan
-        uses: SonarSource/sonarcloud-github-action@v1.1
